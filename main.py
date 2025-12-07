@@ -18,6 +18,10 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 async def on_ready():
     print(f'Giriş yapıldı:  {bot.user.name}')  # Botun adını konsola çıktı olarak verir
 
+bot.command()
+async def merhaba(ctx):
+    await ctx.send('Merhaba! Ben bir Pokemon botuyum. !go yazıp kendi Pokemonunuzu alabilirsiniz.')
+
 # '!go' komutu
 @bot.command()
 async def go(ctx):
@@ -71,4 +75,8 @@ async def feed (ctx):
         await ctx.send("Pokemonunuz yok, !go yazıp oluşturun")
     
 # Botun çalıştırılması
+bot.run(token)
+    
+# Botun çalıştırılması
+
 bot.run(token)
